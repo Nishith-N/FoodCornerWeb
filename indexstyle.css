@@ -1,0 +1,82 @@
+
+  body {
+    height: 100%;
+    width: 100%;
+    background: #eee;
+    font-family: 'PT Sans', sans-serif; }
+  
+  .demo {
+    width: 100%;
+    height: 100%; }
+  
+  .penName {
+    text-align: center;
+    font-size: 36px; }
+  
+  .mainCard {
+    text-align: center;
+    display: block;
+    margin: 60px auto;
+    background-color: white;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    animation-name: mainCard;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    
+    animation-fill-mode: both; }
+  
+  @keyframes mainCard {
+    0% {
+      transform: scale(0); } }
+  
+  .mainCardHeader {
+    background-color: AQUAMARINE;
+    height: 100px;
+    width: 100%;
+    animation-name: mainCardHeader;
+    animation-duration: 0.4s;
+    animation-delay: 0.5s;
+    animation-fill-mode: both; }
+  
+  @keyframes mainCardHeader {
+    0% {
+      transform: scaleY(0); } }
+  
+  .mainCardContent {
+    margin: 0 auto;
+    background-image: url("https://i.pinimg.com/originals/b1/8b/68/b18b686120bc51a9c8e81eb653dd33c6.jpg");
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    text-align: center;
+    position: left;
+    
+
+    top: -50px;
+    height: 40%;
+    width: 100%; }
+  
+  .miniCard {
+    display: inline-flex;
+    padding: 5px;
+    margin-bottom: 50px;
+    margin: 100px 20px;
+    background-color: white;
+    height: 170px;
+    float: left;
+    width: 130px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation-name: miniCard;
+    animation-duration: 1s;
+    animation-delay: 0.8s;
+    animation-fill-mode: both; }
+  
+  @keyframes miniCard {
+    0% {
+      transform: scale(0); }
+    50% {
+      transform: scale(1.05); }
+    100% {
+      transform: scale(1); } }

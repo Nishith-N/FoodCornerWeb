@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+body
+{
+    background-image: url('https://i.pinimg.com/originals/b1/8b/68/b18b686120bc51a9c8e81eb653dd33c6.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    font-family: 'Numans', sans-serif;
+
+}
+a:link {
+    color: black;
+    text-decoration: none;
+  }
+  a:visited {
+    color: black;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: black;
+  }
+  
+  /* selected link */
+  a:active {
+    color: black;
+  }
+
+
+.container{
+height: 90%;
+align-content: center;
+}
+
+.cardregister{
+    height: 680px;
+    margin-top: 4%;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    }
+
+.register{
+    color: white;
+}
+
+.textregister{
+    color: #F8B74E;
+}
+.starregister{
+    color: red;
+}
+
+.card-header{
+color: white;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #B586BD;
+color: black;
+border:0 !important;
+}
+
+
+
+.register_btn{
+color: black;
+background-color: #B586BD;
+transition: background-color 1s;
+width: 100px;
+}
+
+.register_btn:hover{
+
+background-color: white;
+}
+
+.back_btn{
+    color: black;
+    background-color: #B586BD;
+    transition: background-color 1s;
+    width: 100px;
+    }
+    
+    .back_btn:hover{
+   
+    background-color: white;
+    }
+
