@@ -48,8 +48,8 @@
     margin: 60px auto;
     background-color: white;
     box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    height: 45%;
+    width: 98%;
+    height: 60%;
     animation-name: mainCard;
     animation-duration: 1s;
     animation-delay: 0s;
@@ -94,7 +94,7 @@
     margin: 1% 1%;
     margin-left: 2%;
     background-color: white;
-    height: 30%;
+    height: 35%;
     float: left;
     width: 11%;
     border-radius: 5px;
@@ -168,6 +168,72 @@
           height: 35%;
           
         }
+        .mainCard {
+          text-align: center;
+          display: block;
+          margin: 60px auto;
+          background-color: white;
+          box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+          width: 98%;
+          height: 75%;
+          animation-name: mainCard;
+          animation-duration: 1s;
+          animation-delay: 0s;
+          
+          animation-fill-mode: both; }
+        .miniCard {
+          display: inline-block;
+          padding: 5px;
+          margin-bottom: 50px;
+          margin: 1% 1%;
+          margin-left: 2%;
+          background-color: white;
+          height: 25%;
+          float: left;
+          width: 25%;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          animation-name: miniCard;
+          animation-duration: 1s;
+          animation-delay: 0.8s;
+          animation-fill-mode: both; }
+      }
+
+      @media screen and (max-width:780px) {
+        .card
+        {
+          height: 35%;
+          
+        }
+        .mainCard {
+          text-align: center;
+          display: block;
+          margin: 60px auto;
+          background-color: white;
+          box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+          width: 98%;
+          height: 75%;
+          animation-name: mainCard;
+          animation-duration: 1s;
+          animation-delay: 0s;
+          
+          animation-fill-mode: both; }
+        .miniCard {
+          display: inline-block;
+          padding: 5px;
+          margin-bottom: 50px;
+          margin: 1% 1%;
+          margin-left: 2%;
+          background-color: white;
+          height: 25%;
+          float: left;
+          width: 25%;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          animation-name: miniCard;
+          animation-duration: 1s;
+          animation-delay: 0.8s;
+          animation-fill-mode: both; }
       }
       
       /* Style the counter cards */
