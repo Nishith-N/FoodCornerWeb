@@ -41,6 +41,7 @@
     background-color: white;
     box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
     width: 80%;
+    height: 45%;
     animation-name: mainCard;
     animation-duration: 1s;
     animation-delay: 0s;
@@ -75,7 +76,7 @@
     
 
     top: -50px;
-    height: 45%;
+    height: 100%;
     width: 100%; }
   
   .miniCard {
