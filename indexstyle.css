@@ -1,9 +1,18 @@
 
+
+
+
   body {
     height: 100%;
     width: 100%;
     background: #eee;
-    font-family: 'PT Sans', sans-serif; }
+    font-family: 'Chalkboard SE', sans-serif; }
+
+
+
+    h1{
+      color: red;
+    }
   
   .demo {
     width: 100%;
@@ -12,6 +21,18 @@
   .penName {
     text-align: center;
     font-size: 36px; }
+
+    #deals_heading{
+      text-align: left;
+      color: white;
+      padding-top: 5%;
+      padding-left: 5%;
+    }
+    #lists_heading{
+      text-align: left;
+      color: white;
+      padding-left: 5%;
+    }
   
   .mainCard {
     text-align: center;
@@ -54,16 +75,17 @@
     
 
     top: -50px;
-    height: 40%;
+    height: 45%;
     width: 100%; }
   
   .miniCard {
-    display: inline-flex;
+    display: inline-block;
     padding: 5px;
     margin-bottom: 50px;
-    margin: 100px 20px;
+    margin: 1% 1%;
+    margin-left: 2%;
     background-color: white;
-    height: 170px;
+    height: 30%;
     float: left;
     width: 130px;
     border-radius: 5px;
