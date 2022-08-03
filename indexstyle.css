@@ -14,6 +14,14 @@
       color: red;
     }
   
+    hr {
+      border: 0;
+      clear:both;
+      display:block;
+      width: 5%;               
+      background-color:gray;
+      height: 3px;
+    }
   .demo {
     width: 100%;
     height: 100%; }
