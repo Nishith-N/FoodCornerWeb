@@ -96,13 +96,30 @@
     background-color: white;
     height: 30%;
     float: left;
-    width: 130px;
+    width: 11%;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     animation-name: miniCard;
     animation-duration: 1s;
     animation-delay: 0.8s;
     animation-fill-mode: both; }
+
+    .services_card {
+      display: inline-block;
+      padding: 5px;
+      margin-bottom: 50px;
+      margin: 1% 1%;
+      margin-left: 2%;
+      background-color: white;
+      height: 30%;
+      float: left;
+      width: 11%;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      animation-name: miniCard;
+      animation-duration: 1s;
+      animation-delay: 0.8s;
+      animation-fill-mode: both; }
   
   @keyframes miniCard {
     0% {
@@ -111,3 +128,57 @@
       transform: scale(1.05); }
     100% {
       transform: scale(1); } }
+
+
+      .column {
+        width: 25%;
+        align-items: center;
+        justify-content: center;
+        display: inline-block;
+        padding:20px 0.5%;
+      }
+      
+      /* Remove extra left and right margins, due to padding */
+      .row1 {
+        
+        align-content: center;
+        justify-content: center;
+        display: inline;
+        margin-left: 14.5%;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Responsive columns */
+      @media screen and (max-width: 710px) {
+        .column {
+          width: 100%;
+          height: 100%;
+          display: inline;
+          padding:10px 10px;
+          margin-bottom: 10px;
+        }
+        .card
+        {
+          height: 35%;
+          
+        }
+      }
+      
+      /* Style the counter cards */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        
+      align-items: center;
+      justify-content: center;
+        /* margin-left: 40%; */
+        height: 35%;
+        text-align: center;
+        background-color: #f1f1f1;
+      }
+      
