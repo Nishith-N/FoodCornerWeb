@@ -155,7 +155,7 @@
       }
       
       /* Responsive columns */
-      @media screen and (max-width: 710px) {
+      @media screen and (max-width: 480px) {
         .column {
           width: 100%;
           height: 100%;
@@ -202,7 +202,7 @@
       @media screen and (max-width:780px) {
         .card
         {
-          height: 35%;
+          height: 33%;
           
         }
         .mainCard {
