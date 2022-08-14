@@ -1,0 +1,136 @@
+body {
+    height: 100%;
+    width: 100%;
+    background: #eee;
+    font-family: 'Chalkboard SE', sans-serif;
+    font-size: 2em;
+}
+
+ 
+ hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 5%;               
+    background-color:gray;
+    height: 3px;
+  }
+.column {
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    padding:20px 0.5%;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row1 {
+    
+    align-content: center;
+    justify-content: center;
+    display: inline;
+    height: 100%;
+    margin-left: 14.5%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 480px) {
+    .column {
+      width: 100%;
+      height: 100%;
+      display: inline;
+      padding:10px 10px;
+      margin-bottom: 10px;
+    }
+    .card
+    {
+      height: 33%;
+      
+    }
+    .mainCard {
+      text-align: center;
+      display: block;
+      margin: 60px auto;
+      background-color: white;
+      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+      width: 98%;
+      height: 80%;
+      animation-name: mainCard;
+      animation-duration: 1s;
+      animation-delay: 0s;
+      
+      animation-fill-mode: both; }
+    .miniCard {
+      display: inline-block;
+      padding: 5px;
+      margin-bottom: 50px;
+      margin: 1% 1%;
+      margin-left: 2%;
+      background-color: white;
+      height: 25%;
+      float: left;
+      width: 25%;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      animation-name: miniCard;
+      animation-duration: 1s;
+      animation-delay: 0.8s;
+      animation-fill-mode: both; }
+  }
+
+  @media screen and (max-width:780px) {
+    .card
+    {
+      height: 33%;
+      
+    }
+    .mainCard {
+      text-align: center;
+      display: block;
+      margin: 60px auto;
+      background-color: white;
+      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+      width: 98%;
+      height: 80%;
+      animation-name: mainCard;
+      animation-duration: 1s;
+      animation-delay: 0s;
+      
+      animation-fill-mode: both; }
+    .miniCard {
+      display: inline-block;
+      padding: 5px;
+      margin-bottom: 50px;
+      margin: 1% 1%;
+      margin-left: 2%;
+      background-color: white;
+      height: 25%;
+      float: left;
+      width: 25%;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      animation-name: miniCard;
+      animation-duration: 1s;
+      animation-delay: 0.8s;
+      animation-fill-mode: both; }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+  align-items: center;
+  justify-content: center;
+    /* margin-left: 40%; */
+    height: 50%;
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 15px;
+  }
