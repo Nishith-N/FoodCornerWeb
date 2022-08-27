@@ -7,20 +7,21 @@
     <phoneno>Gold</phoneno>
 
     <fooditems>
-        <product category='nonveg'>
+        <product category="nonveg">
             <productid id="n01"></productid>
             <foodname>Mutton Biriyani</foodname>
             <foodprice>Rs.210</foodprice>
             <foodaddress>Haribhavanam,Gandhipuram</foodaddress>
             <foodreview>4.1</foodreview>
-
-            <productid id="n02"></userid>
+        </product>
+        <product category="nonveg">
+            <productid id="n02"></productid>
             <foodname>Burger</foodname>
             <foodprice>Rs.140</foodprice>
             <foodaddress>Brookfields Mall</foodaddress>
             <foodreview>4.3</foodreview>
         </product>
-        <product category='veg'>
+        <product category="veg">
             <productid id="v01"></productid>
             <foodname>Fried Rice</foodname>
             <foodprice>Rs.80</foodprice>
