@@ -1,0 +1,15 @@
+<!ELEMENT article (userid,username,phoneno,productid,foodname,foodprice,foodaddress,foodreview)>
+<!ELEMENT userid (#PCDATA)>
+<!ELEMENT username (#PCDATA)>
+<!ELEMENT phoneno (#PCDATA)>
+<!ELEMENT productid (#PCDATA)>
+<!ELEMENT foodname (#PCDATA)>
+<!ELEMENT foodprice (#PCDATA)>
+<!ELEMENT foodaddress (#PCDATA)>
+<!ELEMENT foodreview (#PCDATA)>
+
+
+<!ATTLIST category type CDATA "nonveg">
+<!ATTLIST category type CDATA "veg">
+<!ATTLIST userid id CDATA #REQUIRED>
+<!ATTLIST productid id CDATA #FIXED >

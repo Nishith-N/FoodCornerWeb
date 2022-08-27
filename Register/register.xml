@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE article SYSTEM "register.dtd">
+<article>
+    
+    <userid id="001"></userid>
+    <username>User_Name</username>
+    <phoneno>Gold</phoneno>
+
+    <fooditems>
+        <product category='nonveg'>
+            <productid id="n01"></productid>
+            <foodname>Mutton Biriyani</foodname>
+            <foodprice>Rs.210</foodprice>
+            <foodaddress>Haribhavanam,Gandhipuram</foodaddress>
+            <foodreview>4.1</foodreview>
+
+            <productid id="n02"></userid>
+            <foodname>Burger</foodname>
+            <foodprice>Rs.140</foodprice>
+            <foodaddress>Brookfields Mall</foodaddress>
+            <foodreview>4.3</foodreview>
+        </product>
+        <product category='veg'>
+            <productid id="v01"></productid>
+            <foodname>Fried Rice</foodname>
+            <foodprice>Rs.80</foodprice>
+            <foodaddress>Annapoorna,R.S Puram</foodaddress>
+            <foodreview>3.2</foodreview>
+            </product>
+    </fooditems>
+</article>
