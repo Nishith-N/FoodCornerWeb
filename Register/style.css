@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
+
+
+
 body
 {
     background-image: url('https://i.pinimg.com/originals/b1/8b/68/b18b686120bc51a9c8e81eb653dd33c6.jpg');
@@ -28,8 +31,14 @@ a:link {
 
 
 .container{
-height: 90%;
+height: 94%;
 align-content: center;
+}
+input.ng-invalid {
+    background-color:coral;
+}
+input.ng-valid {
+    background-color:lightgreen;
 }
 
 .cardregister{
