@@ -65,6 +65,38 @@ body {
 	left: 0;
 	transition: transform 0.2s ease;
 }
+
+ .column {
+        width: 25%;
+        align-items: center;
+        justify-content: center;
+        display: inline-block;
+        padding:20px 0.5%;
+      }
+      
+      /* Remove extra left and right margins, due to padding */
+      .row1 {
+        
+        align-content: center;
+        justify-content: center;
+        display: inline;
+        height: 100%;
+        margin-left: 14.5%;
+      }
+
+	   .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+	  @keyframes miniCard {
+    0% {
+      transform: scale(0); }
+    50% {
+      transform: scale(1.05); }
+    100% {
+      transform: scale(1); } }
 .projcard:nth-child(2n) .projcard-img {
 	left: initial;
 	right: 0;
