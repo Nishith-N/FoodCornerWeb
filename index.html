@@ -111,26 +111,21 @@
         </h4>
         <div class="miniCard">
           <img
-            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-            style="width: 100%; height: 80%"
+            id="div-1"
           />
-
-          <p>Burger</p>
+  
+          <p id="topic-1"></p>
         </div>
 
         <div class="miniCard">
-          <img
-            src="https://www.tbsnews.net/sites/default/files/styles/big_3/public/images/2021/03/19/biriyani.jpg?itok=ykNgL65w"
-            style="width: 100%; height: 80%"
+          <img id="div-2"
           />
-          <p>Biriyani</p>
+          
+          <p id="topic-2"></p>
         </div>
         <div class="miniCard">
-          <img
-            src="https://static.toiimg.com/thumb/54659021.cms?imgsize=275086&width=800&height=800"
-            style="width: 100%; height: 80%"
-          />
-          <p>French Fries</p>
+          <img id="div-3" />
+          <p id="topic-3"></p>
         </div>
         <div class="miniCard">
           <img
@@ -265,7 +260,30 @@
 
   <br />
   <br />
-  
+  <script>
+    fetch("/values.json")
+.then(function (response) {
+    return response.json();
+})
+.then(function (data) {
+    newsData(data);
+})
+.catch(function (err) {
+    console.log('error: ' + err);
+});
+function newsData(data) {
+
+for (var i = 0; i < data.length; i++) {
+    var title1 = document.getElementById("topic-".concat((i+1).toString()));
+    var img1 = document.getElementById("div-".concat((i+1).toString()));
+
+    title1.innerHTML=data[i].title;
+    img1.src= data[i].img;
+    img1.style.height="80%";
+    img1.style.width="100%";
+}
+}
+  </script>
 </body>
 
 

@@ -92,9 +92,11 @@
                   <input
                     type="text"
                     id="pwd"
-                    name="pwd" ng-model="pwd"
+                    name="pwd"
+                    ng-model="pwd"
                     class="form-control"
-                    style="width: 300px" required
+                    style="width: 300px"
+                    required
                   />
                   <span class="error"> </span>
                 </div>
@@ -176,7 +178,8 @@
                       id="email"
                       name="myInput"
                       class="form-control"
-                      ng-model="myInput" style="background-color: white;"
+                      ng-model="myInput"
+                      style="background-color: white"
                     />
                     <span class="error"> </span>
                   </div>
@@ -185,10 +188,13 @@
                     <label for="phone" class="textregister">Phone</label
                     ><label for="phone" class="starregister"> * </label>
                     <input
-                      type="number"
+                      type="text"
                       id="phone"
                       name="phone"
                       class="form-control"
+                      ng-pattern="myphone"
+                      ng-model="custphone" ng-minlength="10"
+                    ng-maxlength="10"
                     />
                     <span class="error"></span>
                   </div>
@@ -201,13 +207,15 @@
                     style="margin-top: 15px"
                     class="btn float-right register_btn"
                     id="submit_btn"
-                    name="submit_btn" ng-disabled="regform.myInput.$error.email"
+                    name="submit_btn"
+                    ng-disabled="regform.myInput.$error.email"
+                    
                   />
                 </div>
               </form>
-              <span ng-show="regform.myInput.$error.email" style="color: red">Not a valid e-mail address
+              <span ng-show="regform.myInput.$error.email" style="color: red"
+                >Not a valid e-mail address
               </span>
-
 
               <button
                 type="submit"
@@ -224,12 +232,11 @@
       </div>
       <br /><br />
       <script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-    // $scope.myInput = "Example abc@gmail.com";
-    // $scope.lastName = "Doe";
-});
-</script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope) {
+          $scope.myphone = /^[0-9]{10}$/;
+        });
+      </script>
     </body>
   </div>
 </html>
