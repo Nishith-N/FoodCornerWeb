@@ -1,5 +1,6 @@
 body {
-	font-family: 'Open Sans', arial, sans-serif;
+	font-family: 'Chalkboard SE', sans-serif;
+    font-size: 2em;
 	color: #333;
 	font-size: 14px;
 	
@@ -236,4 +237,17 @@ body {
 	border-top: 13px solid transparent;
 	right: -10px;
 	top: 0;
+}
+
+.addbtn{
+color: black;
+background-color: #B586BD;
+transition: background-color 1s;
+width: 100px;
+float: right;
+}
+
+.addbtn:hover{
+
+background-color: grey;
 }

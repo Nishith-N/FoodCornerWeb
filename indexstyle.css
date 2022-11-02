@@ -164,7 +164,16 @@
         justify-content: center;
         display: inline;
         height: 100%;
-        margin-left: 14.5%;
+        margin-left: 24.0%;
+      }
+
+      .row2 {
+        
+        align-content: center;
+        justify-content: center;
+        display: inline;
+        height: 100%;
+        margin-left: 11.5%;
       }
       
       /* Clear floats after the columns */
@@ -186,6 +195,7 @@
         .card
         {
           height: 33%;
+          font-size: 16px;
           
         }
         .mainCard {
@@ -195,7 +205,7 @@
           background-color: white;
           box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
           width: 98%;
-          height: 80%;
+          height: 100%;
           animation-name: mainCard;
           animation-duration: 1s;
           animation-delay: 0s;
@@ -226,6 +236,7 @@
           
         }
         .mainCard {
+          
           text-align: center;
           display: block;
           margin: 60px auto;
@@ -247,6 +258,7 @@
           background-color: white;
           height: 25%;
           float: left;
+          
           width: 25%;
           border-radius: 5px;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -259,6 +271,7 @@
       /* Style the counter cards */
       .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        font-size: 16px;
         
       align-items: center;
       justify-content: center;
