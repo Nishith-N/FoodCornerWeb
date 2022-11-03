@@ -188,7 +188,7 @@
                     <label for="phone" class="textregister">Phone</label
                     ><label for="phone" class="starregister"> * </label>
                     <input
-                      type="text"
+                      type="number"
                       id="phone"
                       name="phone"
                       class="form-control"
@@ -197,6 +197,7 @@
                     ng-maxlength="10" required
                     />
                     <span class="error"></span>
+                    <span ng-show="regform.phone.$error.minlength || myForm.phno.$error.maxlength " style="color: red; font-size: 16px;">Not a valid phone number</span>
                   </div>
                 </div>
 
