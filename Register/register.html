@@ -46,7 +46,7 @@
             </div>
 
             <div class="card-body">
-              <form method="POST" action="../index.html" name="regform">
+              <form method="POST" action="/register" name="regform">
                 <div class="form-group">
                   <label for="fname" class="textregister">First Name </label
                   ><label for="fname" class="starregister"> * </label>
@@ -233,7 +233,7 @@
         </div>
       </div>
       <br /><br />
-      <script>
+    <script>
         var app = angular.module("myApp", []);
         app.controller("myCtrl", function ($scope) {
           $scope.myphone = /^[0-9]{10}$/;

@@ -1,62 +1,73 @@
+
+
 const express = require("express");
-const mongoose = require("mongoose");
 const app = express();
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname)); //to avoid sending static files using res.send file
 
-mongoose
-  .connect("mongodb://localhost:27017/FoodCornerWeb")
-  .then((res) => {
-    console.log("Connected to mongodb.");
-  })
-  .catch((error) => console.log(error));
-app.use(express.json());
-app.use(express.static("public"));
+mongoose.connect(
+  "mongodb+srv://nishith:nishith@cluster0.jbk6vzi.mongodb.net/FoodCornerDB"
+);
 
-// Mongoose model
-const Todo = require("./models/Todo.js");
-app.get("/", (req, res) => {
-  res.sendFile("/index.html");
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/api/todo", (req, res) => {
-  Todo.find({})
-    .then((todos) => {
-      res.status(200).json(todos);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json({ error: err.message });
-    });
+app.get("/mens.html", function (req, res) {
+  res.sendFile(__dirname + "/mens.html");
 });
-app.post("/api/todo", (req, res) => {
-  const todo = new Todo({
-    ...req.body,
+
+const userSchema = {
+  fname: String,
+  lname: String,
+  address: String,
+  password: String,
+  city: String,
+  state: String,
+  zip: String,
+  email: String,
+  phoneno: String,
+
+};
+const newUser = mongoose.model("logins", userSchema);
+app.post("/register", function (req, res) {
+  let insert = new newUser({
+    fname: req.body.fname,
+    lname: req.body.lname,
+    address: req.body.address1,
+    password: req.body.pwd,
+    city: req.body.city,
+    state: req.body.state,
+    zip: req.body.zip,
+    email: req.body.myInput,
+    phoneno: req.body.phone
   });
-  todo
-    .save()
-    .then((savedTodo) => {
-      res.status(201).json(savedTodo);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json({ error: err.message });
-    });
+  insert.save();
+  res.redirect("/");
 });
 
-app.put('/api/todo', (req, res) => { 
-     const todo = { 
-          name: req.body.todo, 
-          isCompleted: req.body.isCompleted 
-     } 
-     Todo.findByIdAndUpdate(req.body._id, todo, { new: true }) 
-     .then(updatedTodo => { 
-          res.json(updatedTodo)
-      }) 
-      .catch(error => { 
-          console.log(err) 
-          res.status(400).json({ error: err.message }) 
-     }) 
-}) 
-const PORT = process.env.PORT || 3000 
-app.listen(PORT, () => { 
-     console.log(`Server running on port ${PORT}`)
- })
+const matchSchema = {
+  logo1: String,
+  logo2: String,
+  name1: String,
+  name2: String,
+  league: String,
+  date: String,
+  time: String,
+  venue: String,
+};
+const match = mongoose.model("match", matchSchema);
+app.get("/load", (req, res) => {
+  match.find((err, data) => {
+    if (err) {
+      return res.status(500).send(err);
+    } else {
+      return res.status(200).send(data);
+    }
+  });
+});
+app.listen(3000, function () {
+  console.log("server is running on 3000");
+});
