@@ -52,7 +52,7 @@ app.post("/register", function (req, res) {
 
 const addcartSchema = {
   cart_dish: String,
-  cart_price: String,
+  cart_price: Number,
 };
 
 const cart_details = mongoose.model("cartdets",addcartSchema);
@@ -130,6 +130,22 @@ app.post("/eatngo", (req, res) => {
     eatngodata.push(data);
    res.redirect("../Restaurant/resthome.html");
   });
+});
+
+app.post("/login", (req,res) => {
+  newUser.findOne({phoneno:req.body.uid,password: req.body.pwd},(err,data) =>{
+    
+    if(data!=null)
+    {
+     
+      res.redirect("/");
+    }
+    else
+    {
+      res.redirect("../Restaurant/resthome.html");
+    }
+  });
+
 });
 
 app.post("/tasteontruck", (req, res) => {
