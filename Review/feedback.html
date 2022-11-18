@@ -10,6 +10,7 @@
   
     <link rel="stylesheet" type="text/css" href="feedbackstyle.css" />
     <title>FoodCorner</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <meta
       name="viewport"
       content="width=device-width,height=device-height,initial-scale=1.0"
@@ -90,7 +91,7 @@
 
 
 
-<form>      
+<form method="post" action="/feedbacks">      
   <input name="name" type="text" class="feedback-input" placeholder="Name" />   
   <input name="email" type="text" class="feedback-input" placeholder="Email" />
 <section class="myRadio">
@@ -125,5 +126,28 @@
   <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
   <input type="submit" value="SUBMIT"/>
 </form>
+<div class="container" ng-app="prwpst" ng-controller="pctrl">
+
+  <div class="row" ng-repeat="card in cards" >
+
+    <h3>{{card.name}}</h3>
+    <h3>{{card.email}}</h3>
+  </div>
+</div>
 </body>
+
+<script type="text/javascript">
+  var app=angular.module('prwpst', []);
+
+  app.controller('pctrl', function($scope, $http) {
+    $http({
+            method: 'GET',
+            url: "http://localhost:3000/testret"
+            }).then(function success(response) {
+                $scope.cards=response.data;
+                }, function error(response) {
+                }
+            );
+    });
+  </script>
 </html>

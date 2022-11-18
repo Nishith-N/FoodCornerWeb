@@ -8,7 +8,8 @@
   
     <link href="https://fonts.cdnfonts.com/css/chalkboard-se" rel="stylesheet" />
   
-    <link rel="stylesheet" type="text/css" href="nvhomestyle.css" />
+    <link rel="stylesheet" type="text/css" href="cartsstyle.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <title>FoodCorner</title>
     <meta
       name="viewport"
@@ -21,7 +22,7 @@
     />
   </head>
   
-  <body>
+  <body ng-app="prwpst" ng-controller="pctrl" ng-init="totalval= 0">
     <div class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="row">
@@ -87,132 +88,53 @@
         </div>
       </div>
     </div>
-  <header>
-    <center><h1>Food Corner</h1></center>
-    </header>
 
-    <center>
-      <h2>Shops near You</h2>
+
+    <div class="container">
       
 
-      <hr />
-    </center>
+      <div class="row" ng-repeat="card in cards" >
 
-    <div class="row1">
-      <div class="column">
-        <form action="/eatngo" method="post">
-        <a href="../Restaurant/resthome.html"  style="color: black;text-decoration: none;"><div class="card">
-
-          <img id="div-1"
-          />
-          <h3 id="topic-1"></h3>
-          <h4 id="rate-1"><span class="glyphicon glyphicon-star"></span></h4>
-            <input type="submit" value="Try">
-          </form>
+        <div class="col-lg-12 mb-4">
+          <div class="p-4" style="background-color:skyblue;border-radius: 20px;">
+            <div class="widget-body">
+                <div class="widget-vs">
+                  <div class="d-flex align-items-center justify-content-around justify-content-between w-10">
+                    <div class="team-1 text-center">
+                      <h3>Dish: <i>{{card.cart_dish}}</i></h3>
+                    </div>
+                    <div class="team-2 text-center"> 
+                      <h3>Price: <i>{{card.cart_price}}</i></h3><br>
+                      <h3 style="visibility: hidden;">{{totalval=Number(totalval)+Number(card.cart_price)}}</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>            
+          </div>
         </div>
-      </a>
       </div>
-
-      <div class="column">
-        <form action="/tasteontruck" method="post">
-        <a href="../NonVeg/nvhome.html" style="color: black;text-decoration: none;"><div class="card">
-          <img id="div-2"
-          />
-          <h3 id="topic-2"></h3>
-          <h4 id="rate-2"><span class="glyphicon glyphicon-star"></span></h4>
-          <input type="submit" value="Try">
-          </form>
-        </div>
-        </a>
-      </div>
-
-      <div class="column">
-        <form action="/maduraijigar" method="post">
-        <a href="../NonVeg/nvhome.html" style="color: black;text-decoration: none;"><div class="card">
-          <img
-            id="div-3"
-          />
-          <h3 id="topic-3"></h3>
-          <h4 id="rate-3"><span class="glyphicon glyphicon-star"></span></h4>
-                    <input type="submit" value="Try">
-          </form>
-        </div>
-        </a>
-      </div>
-    </div>
-
-
-    <div class="row1">
-      <div class="column">
-        <form action="/linda" method="post">
-        <a href="../NonVeg/nvhome.html" style="color: black;text-decoration: none;"><div class="card">
-
-          <img
-            id="div-4"
-            
-          />
-          <h3 id="topic-4"></h3>
-          <h4 id="rate-4"><span class="glyphicon glyphicon-star"></span></h4>
-          <input type="submit" value="Try">
-          </form>
-        </div>
-      </a>
-      </div>
-
-      <div class="column">
-        <form action="/manimess" method="post">
-        <a href="../NonVeg/nvhome.html" style="color: black;text-decoration: none;"><div class="card">
-          <img id="div-5"
-          />
-          <h3 id="topic-5"></h3>
-          <h4 id="rate-5"><span class="glyphicon glyphicon-star"></span></h4>
-          <input type="submit" value="Try">
-          </form>
-        </div>
-        </a>
-      </div>
-      <br><br>
-
-     
+        <h3>Total Cost: {{totalval}}</h3>
+        
+</div>
 
 
 
-    
 
-<script>
-    fetch("../NonVeg/nvhomevalues.json")
-.then(function (response) {
-    return response.json();
-})
-.then(function (data) {
-    newsData(data);
-})
-.catch(function (err) {
-    console.log('error: ' + err);
-});
-function newsData(data) {
+</body>
 
-for (var i = 0; i < data.length; i++) {
-    var title1 = document.getElementById("topic-".concat((i+1).toString()));
-    var img1 = document.getElementById("div-".concat((i+1).toString()));
-    var rate = document.getElementById("rate-".concat((i+1).toString()));
 
-    title1.innerHTML=data[i].title;
-    img1.src= data[i].img;
-    rate.innerHTML=data[i].rate;
-    img1.style.height="80%";
-    img1.style.width="100%";
-    img1.role="button";
-    
-}
-}
+<script type="text/javascript">
+  var app=angular.module('prwpst', []);
+
+  app.controller('pctrl', function($scope, $http) {
+    $http({
+            method: 'GET',
+            url: "http://localhost:3000/cart_display"
+            }).then(function success(response) {
+                $scope.cards=response.data;
+                }, function error(response) {
+                }
+            );
+    });
   </script>
-
-
-    </body>
-
-
-    </html>
-    
-
-  
+</html>
