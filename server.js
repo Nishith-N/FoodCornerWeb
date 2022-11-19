@@ -10,6 +10,10 @@ var maduraijigardata = [];
 var cart_check=[];
 var manimessdata=[];
 var lindadata = [];
+
+var donutsdata=[];
+var aboorvasdata=[];
+var cakeheistdata=[];
 app.use(express.static(__dirname)); //to avoid sending static files using res.send file
 
 mongoose.connect(
@@ -242,7 +246,7 @@ app.post("/manimess", (req, res) => {
 app.get("/restdetails",(req,res)=>{
 
   if (eatngodata.length) {
-    eatngodata=[];
+    eatngodata = [];
     restaurant_data.findOne({ rest_name: "Eat N Go" }, (err, data) => {
       if (err) {
         console.log(err);
@@ -253,7 +257,7 @@ app.get("/restdetails",(req,res)=>{
       }
     });
   } else if (tasteontruckdata.length) {
-    tasteontruckdata=[];
+    tasteontruckdata = [];
     restaurant_data.findOne({ rest_name: "Taste On Truck" }, (err, data) => {
       if (err) {
         console.log(err);
@@ -264,7 +268,7 @@ app.get("/restdetails",(req,res)=>{
       }
     });
   } else if (maduraijigardata.length) {
-    maduraijigardata=[];
+    maduraijigardata = [];
     restaurant_data.findOne(
       { rest_name: "Madurai Jigarthanda" },
       (err, data) => {
@@ -278,7 +282,7 @@ app.get("/restdetails",(req,res)=>{
       }
     );
   } else if (lindadata.length) {
-    lindadata=[];
+    lindadata = [];
     restaurant_data.findOne({ rest_name: "Linda" }, (err, data) => {
       if (err) {
         console.log(err);
@@ -289,7 +293,7 @@ app.get("/restdetails",(req,res)=>{
       }
     });
   } else if (manimessdata.length) {
-    manimessdata=[];
+    manimessdata = [];
     restaurant_data.findOne({ rest_name: "Mani Mess" }, (err, data) => {
       if (err) {
         console.log(err);
@@ -299,11 +303,71 @@ app.get("/restdetails",(req,res)=>{
         return res.status(200).send(data1);
       }
     });
+  } else if (donutsdata.length) {
+    donutsdata = [];
+    veg_rest_data.findOne({ rest_name: "Donuts" }, (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).send(err);
+      } else {
+        data1 = [data];
+        return res.status(200).send(data1);
+      }
+    });
+  } else if (aboorvasdata.length) {
+    aboorvasdata = [];
+    veg_rest_data.findOne({ rest_name: "Shree Aboorvas" }, (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).send(err);
+      } else {
+        data1 = [data];
+        return res.status(200).send(data1);
+      }
+    });
+  } else if (cakeheistdata.length) {
+    cakeheistdata = [];
+    veg_rest_data.findOne({ rest_name: "Cake Heist" }, (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).send(err);
+      } else {
+        data1 = [data];
+        return res.status(200).send(data1);
+      }
+    });
   }
+
 });
 
 
+const vegrestSchema = {
+  rest_name: String,
+  values: Object,
+};
 
+const veg_rest_data = mongoose.model("vegcollections", vegrestSchema);
+
+app.post("/donuts", (req, res) => {
+  veg_rest_data.findOne({ rest_name: "Donuts" }, (err, data) => {
+    donutsdata.push(data);
+    res.redirect("../Restaurant/resthome.html");
+  });
+});
+
+app.post("/aboorvas", (req, res) => {
+  veg_rest_data.findOne({ rest_name: "Shree Aboorvas" }, (err, data) => {
+    aboorvasdata.push(data);
+    res.redirect("../Restaurant/resthome.html");
+  });
+});
+
+app.post("/cakeheist", (req, res) => {
+  veg_rest_data.findOne({ rest_name: "Cake Heist" }, (err, data) => {
+    cakeheistdata.push(data);
+    res.redirect("../Restaurant/resthome.html");
+  });
+});
 
 
 

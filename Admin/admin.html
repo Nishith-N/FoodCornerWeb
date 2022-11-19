@@ -1,6 +1,20 @@
 <html>
 
 <head>
+  <style>
+    .addbtn{
+color: black;
+background-color: #B586BD;
+transition: background-color 1s;
+width: 100px;
+float: right;
+}
+
+.addbtn:hover{
+
+background-color: grey;
+}
+  </style>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -96,7 +110,7 @@
       <div class="row" ng-repeat="card in cards" >
 
         <div class="col-lg-12 mb-4">
-          <div class="p-4" style="background-color:skyblue;border-radius: 20px;">
+          <div class="p-4" style="background-color:skyblue;border-radius: 20px; height: 26rem;">
             <div class="widget-body">
                 <div class="widget-vs">
                   <div class="d-flex align-items-center justify-content-around justify-content-between w-10">
@@ -117,7 +131,7 @@
                   <h3 class="">Comments: <i>{{card.comments}}</i></h3>
                   <form method="post" action="/adminchange">
                     <input type="text" value="{{card._id}}" name="adminid" style="visibility: hidden;">
-<input type="submit" value="Delete">
+<input type="submit" value="Delete" class="btn float-right addbtn">
 
                   </form>
                 
