@@ -7,6 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var eatngodata=[];
 var tasteontruckdata = [];
 var maduraijigardata = [];
+var cart_check=[];
 var manimessdata=[];
 var lindadata = [];
 app.use(express.static(__dirname)); //to avoid sending static files using res.send file
@@ -78,8 +79,11 @@ app.post("/cart_det2", function (req, res) {
 app.get("/cart_display", (req, res) => {
   cart_details.find((err, data) => {
     if (err) {
+
       return res.status(500).send(err);
     } else {
+      console.log(data);
+      cart_check=data;
       return res.status(200).send(data);
     }
   });
@@ -111,6 +115,7 @@ app.get("/feed_details", (req, res) => {
     if (err) {
       return res.status(500).send(err);
     } else {
+
       return res.status(200).send(data);
     }
   });
@@ -132,20 +137,52 @@ app.post("/eatngo", (req, res) => {
   });
 });
 
+
+
+app.post("/cartdel",(req,res)=>{
+  var MongoClient = require("mongodb").MongoClient;
+  var url =
+    "mongodb+srv://nishith:nishith@cluster0.jbk6vzi.mongodb.net/FoodCornerDB";
+
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("FoodCornerDB");
+    dbo.dropCollection("cartdets", function (err, delOK) {
+      if(cart_check.length!=0)
+      {
+        if (delOK) {
+          res.redirect("../Login/login.html");
+        } else {
+          res.redirect("../Outputs/error.html");
+        }
+
+      }
+      else{
+        res.redirect("../Outputs/error.html");
+      }
+      
+    });
+  });
+});
+
 app.post("/login", (req,res) => {
   newUser.findOne({phoneno:req.body.uid,password: req.body.pwd},(err,data) =>{
     
     if(data!=null)
     {
      
-      res.redirect("/");
+      res.redirect("../Outputs/success.html");
     }
     else
     {
-      res.redirect("../Restaurant/resthome.html");
+      res.redirect("../Outputs/error.html");
     }
   });
 
+});
+
+app.post("/success",(req,res)=>{
+  res.redirect("/");
 });
 
 app.post("/tasteontruck", (req, res) => {

@@ -117,8 +117,8 @@
       </div>
         <h3>Total Cost: {{totalval}}</h3>
 
-        <form method="get" action="../Login/login.html">
-
+        <form method="post" action="/cartdel">
+        
             <input type="submit" value="Order Now">
         </form>
         
@@ -139,6 +139,8 @@
             url: "http://localhost:3000/cart_display"
             }).then(function success(response) {
                 $scope.cards=response.data;
+                print(cards);
+                console.log(response.data);
                 }, function error(response) {
                 }
             );
