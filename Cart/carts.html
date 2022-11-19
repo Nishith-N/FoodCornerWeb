@@ -22,7 +22,7 @@
     />
   </head>
   
-  <body ng-app="prwpst" ng-controller="pctrl" ng-init="totalval = 0">
+  <body ng-app="prwpst" ng-controller="pctrl">
     <div class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="row">
@@ -109,13 +109,13 @@
                     </div>  
                   </div>
                 </div>
-                <!-- <h3 >{{totalval=totalval+card.cart_price}}</h3> -->
-                 
+                <h3 >{{myval}}</h3>
               </div>          
           </div>
         </div>
       </div>
-        <h3>Total Cost: {{totalval}}</h3>
+
+        <h3>Total Cost: {{myval}}</h3>
 
         <form method="post" action="/cartdel">
         
@@ -140,6 +140,12 @@
             }).then(function success(response) {
                 $scope.cards=response.data;
                 print(cards);
+                var totalval=0;
+                for (let i = 0; i < cards.length; i++) {
+        totalval=totalval+cards.cart_price[i];
+}
+
+$scope.myval=totalval;
                 console.log(response.data);
                 }, function error(response) {
                 }

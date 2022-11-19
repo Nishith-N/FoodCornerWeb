@@ -149,6 +149,7 @@ app.post("/cartdel",(req,res)=>{
     "mongodb+srv://nishith:nishith@cluster0.jbk6vzi.mongodb.net/FoodCornerDB";
 
   MongoClient.connect(url, function (err, db) {
+    
     if (err) throw err;
     var dbo = db.db("FoodCornerDB");
     dbo.dropCollection("cartdets", function (err, delOK) {
@@ -208,6 +209,39 @@ app.post("/login", (req,res) => {
       res.redirect("../Outputs/error.html");
     }
   });
+
+});
+
+
+app.post("/chngelogin",(req,res)=>{
+newUser.findOne({phoneno:req.body.uid,password: req.body.pwd},(err,data) =>{
+if (data != null) {
+  if(req.body.new_pwd==req.body.cnfrm)
+  {
+    newUser.updateOne(
+      { phoneno: req.body.uid, password: req.body.pwd },
+      { password: req.body.new_pwd },
+      (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.redirect("/");
+        }
+      }
+    );
+  }
+ 
+} else {
+  res.redirect("../Outputs/error.html");
+}
+
+});
+});
+
+
+app.post("/chngepwd",(req,res)=> {
+
+
 
 });
 

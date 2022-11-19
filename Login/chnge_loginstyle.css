@@ -1,0 +1,78 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+
+body
+{
+    background-image: url('https://i.pinimg.com/originals/b1/8b/68/b18b686120bc51a9c8e81eb653dd33c6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+height: 100;
+    font-family: 'Numans', sans-serif;
+
+}
+
+
+.logo:hover{
+    width: 180px;
+    height: 150px;
+}
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 360px;
+margin-top: 4%;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+
+
+
+
+.card-header{
+color: white;
+}
+
+
+
+.input-group-prepend span{
+width: 50px;
+background-color: #B586BD;
+color: black;
+border:0 !important;
+}
+
+
+.login_btn{
+color: black;
+background-color: #B586BD;
+width: 100px;
+}
+
+.login_btn:hover{
+
+background-color: white;
+}
+
+.links{
+    /* dont have an account colour */
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+color: #F8B74E;
+}
+
+.logo{
+    /* logo's dimension */
+    height: 150px;
+    width: 150px;
+    transition: width 1s;
+}
