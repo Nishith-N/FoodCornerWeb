@@ -106,7 +106,7 @@ app.post("/feedbacks", function (req, res) {
     comments: req.body.text
   });
   insert.save();
-  res.redirect("/");
+  res.redirect("../Review/feedback_details.html");
 });
 
 
@@ -163,6 +163,32 @@ app.post("/cartdel",(req,res)=>{
       
     });
   });
+});
+
+app.post("/adminchange",(req,res)=> {
+  console.log(req.body.adminid);
+  newfeeds.find({_id: req.body.adminid}).deleteOne((err,data)=> {
+     if (err) {
+       return res.status(500).send(err);
+     } else {
+       console.log(data);
+       return res.status(200);
+     }
+  });
+  res.redirect("index.html");
+});
+
+app.post("/deletearticle", (req, res) => {
+  newBlog
+    .find({ title: { $regex: req.body.delArt, $options: "i" } })
+    .deleteOne((err, data) => {
+      if (err) {
+        return res.status(500).send(err);
+      } else {
+        console.log(data);
+        return res.status(200);
+      }
+    });
 });
 
 app.post("/login", (req,res) => {
