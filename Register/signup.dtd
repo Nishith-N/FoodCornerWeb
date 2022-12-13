@@ -1,0 +1,8 @@
+<!ELEMENT SignUp (User+)>
+<!ELEMENT User (Name,Email,Phone,Password,ConfirmPassword)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Phone (#PCDATA)>
+<!ELEMENT Password (#PCDATA)>
+<!ELEMENT ConfirmPassword (#PCDATA)>
+<!ATTLIST User id ID (#REQUIRED)>

@@ -1,0 +1,9 @@
+<!ELEMENT Payment (User+)>
+<!ELEMENT User (CardNumber, CardHolderName, ExpirationMonth, ExpirationYear, CVV, Amount)>
+<!ELEMENT CardNumber (#PCDATA)>
+<!ELEMENT CardHolderName (#PCDATA)>
+<!ELEMENT ExpirationMonth (#PCDATA)>
+<!ELEMENT ExpirationYear (#PCDATA)>
+<!ELEMENT CVV (#PCDATA)>
+<!ELEMENT Amount (#PCDATA)>
+<!ATTLIST User id ID (#REQUIRED)>

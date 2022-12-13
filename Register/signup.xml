@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPLICIT DTD -->
+<!DOCTYPE SignUp [
+<!ELEMENT SignUp (User+)>
+<!ELEMENT User (Name,Email,Phone,Password,ConfirmPassword)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Phone (#PCDATA)>
+<!ELEMENT Password (#PCDATA)>
+<!ELEMENT ConfirmPassword (#PCDATA)>
+<!ATTLIST User id ID (#REQUIRED)>
+]>
+<!-- 
+EXPLICIT DTD
+<!DOCTYPE SignUp SYSTEM "signup.dtd"> 
+-->
+<SignUp xmlns="http://www.signup.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.signup.com signup.xsd">
+    <User id="nishith84">
+        <Name>Nishith</Name>
+        <Email>nishith@gmail.com</Email>
+        <Phone>9123595596</Phone>
+        <Password>Password123</Password>
+        <ConfirmPassword>Password123</ConfirmPassword>
+    </User>
+    <User id="ram45">
+        <Name>Ram</Name>
+        <Email>ram@gmail.com</Email>
+        <Phone>9125555596</Phone>
+        <Password>Password012</Password>
+        <ConfirmPassword>Password012</ConfirmPassword>
+    </User>
+    <User id="sam12">
+        <Name>Sam</Name>
+        <Email>sam@gmail.com</Email>
+        <Phone>8883595596</Phone>
+        <Password>PassWord</Password>
+        <ConfirmPassword>PassWord</ConfirmPassword>
+    </User>
+</SignUp>

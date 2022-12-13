@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPLICIT DTD -->
+<!DOCTYPE Payment [
+<!ELEMENT Payment (User+)>
+<!ELEMENT User (CardNumber, CardHolderName, ExpirationMonth, ExpirationYear, CVV, Amount)>
+<!ELEMENT CardNumber (#PCDATA)>
+<!ELEMENT CardHolderName (#PCDATA)>
+<!ELEMENT ExpirationMonth (#PCDATA)>
+<!ELEMENT ExpirationYear (#PCDATA)>
+<!ELEMENT CVV (#PCDATA)>
+<!ELEMENT Amount (#PCDATA)>
+<!ATTLIST User id ID (#REQUIRED)>
+]>
+<!-- 
+EXPLICIT DTD
+<!DOCTYPE Payment SYSTEM "payment.dtd"> 
+-->
+<Payment xmlns="http://www.payment.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.payment.com payment.xsd">
+    <User id="nishith84">
+        <CardNumber>1234567887654321</CardNumber>
+        <CardHolderName>Nishith N</CardHolderName>
+        <ExpirationMonth>10</ExpirationMonth>
+        <ExpirationYear>2027</ExpirationYear>
+        <CVV>342</CVV>
+        <Amount>1878</Amount>
+    </User>
+    <User id="ram45">
+        <CardNumber>1234432156788765</CardNumber>
+        <CardHolderName>Ram</CardHolderName>
+        <ExpirationMonth>3</ExpirationMonth>
+        <ExpirationYear>2030</ExpirationYear>
+        <CVV>123</CVV>
+        <Amount>2048</Amount>
+    </User>
+</Payment>
